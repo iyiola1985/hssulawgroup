@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { easeSmooth } from "@/lib/motion";
 import { MapPin } from "lucide-react";
 import { ContactEmailBadge } from "@/components/site/ContactEmailBadge";
-import { FIRM_CONTACT_EMAIL } from "@/lib/contact";
+import { FIRM_CONTACT_EMAIL, FIRM_CONTACT_PHONE, telContactHref } from "@/lib/contact";
 
 const addressLines = [
   "Angela W Hssu & Associates Immigration Law",
@@ -149,7 +149,14 @@ export function Contact() {
                 </p>
                 <p className="mt-3 max-w-sm text-sm text-white/75">
                   Your message has been sent. We will reply as soon as we can.
-                  For urgent matters, email{" "}
+                  For urgent matters, call{" "}
+                  <a
+                    href={telContactHref}
+                    className="font-medium text-gold underline decoration-gold/40 underline-offset-2 hover:decoration-gold"
+                  >
+                    {FIRM_CONTACT_PHONE}
+                  </a>{" "}
+                  or email{" "}
                   <a
                     href={`mailto:${FIRM_CONTACT_EMAIL}`}
                     className="font-medium text-gold underline decoration-gold/40 underline-offset-2 hover:decoration-gold"

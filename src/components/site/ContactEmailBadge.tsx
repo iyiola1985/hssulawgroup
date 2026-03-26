@@ -1,8 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Mail } from "lucide-react";
-import { FIRM_CONTACT_EMAIL, mailtoContactHref } from "@/lib/contact";
+import { Check, Mail, Phone } from "lucide-react";
+import {
+  FIRM_CONTACT_EMAIL,
+  FIRM_CONTACT_PHONE,
+  mailtoContactHref,
+  telContactHref,
+} from "@/lib/contact";
 
 type Props = {
   variant?: "dark" | "footer";
@@ -57,6 +62,26 @@ export function ContactEmailBadge({ variant = "dark" }: Props) {
           </span>
           <span className="break-all underline decoration-gold/40 underline-offset-4 transition-[text-decoration-color] group-hover:decoration-gold">
             {FIRM_CONTACT_EMAIL}
+          </span>
+        </a>
+      </div>
+      <div className="mt-3 flex flex-wrap items-center gap-3">
+        <a
+          href={telContactHref}
+          className="group inline-flex items-center gap-2.5 text-sm font-medium text-white transition-colors hover:text-gold sm:text-base"
+        >
+          <span
+            className={
+              isFooter
+                ? "flex h-9 w-9 items-center justify-center rounded-sm bg-gold/15 text-gold"
+                : "flex h-10 w-10 items-center justify-center rounded-sm bg-gold/20 text-gold transition-colors group-hover:bg-gold/30"
+            }
+            aria-hidden
+          >
+            <Phone className="h-4 w-4" strokeWidth={1.5} />
+          </span>
+          <span className="underline decoration-gold/40 underline-offset-4 transition-[text-decoration-color] group-hover:decoration-gold">
+            {FIRM_CONTACT_PHONE}
           </span>
         </a>
       </div>
